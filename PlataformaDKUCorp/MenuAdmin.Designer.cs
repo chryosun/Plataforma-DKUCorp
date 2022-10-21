@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_GtestionUsuario = new System.Windows.Forms.Button();
-            this.Btn_CerrarSesion = new System.Windows.Forms.Button();
+            this.BtnCerrarSesion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,21 +63,22 @@
             this.Btn_GtestionUsuario.UseVisualStyleBackColor = true;
             this.Btn_GtestionUsuario.Click += new System.EventHandler(this.Btn_GtestionUsuario_Click);
             // 
-            // Btn_CerrarSesion
+            // BtnCerrarSesion
             // 
-            this.Btn_CerrarSesion.Location = new System.Drawing.Point(513, 347);
-            this.Btn_CerrarSesion.Name = "Btn_CerrarSesion";
-            this.Btn_CerrarSesion.Size = new System.Drawing.Size(133, 29);
-            this.Btn_CerrarSesion.TabIndex = 3;
-            this.Btn_CerrarSesion.Text = "Cerrar Sesion";
-            this.Btn_CerrarSesion.UseVisualStyleBackColor = true;
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(513, 347);
+            this.BtnCerrarSesion.Name = "BtnCerrarSesion";
+            this.BtnCerrarSesion.Size = new System.Drawing.Size(133, 29);
+            this.BtnCerrarSesion.TabIndex = 3;
+            this.BtnCerrarSesion.Text = "Cerrar Sesion";
+            this.BtnCerrarSesion.UseVisualStyleBackColor = true;
+            this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
             // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 417);
-            this.Controls.Add(this.Btn_CerrarSesion);
+            this.Controls.Add(this.BtnCerrarSesion);
             this.Controls.Add(this.Btn_GtestionUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -95,6 +96,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_GtestionUsuario;
-        private System.Windows.Forms.Button Btn_CerrarSesion;
+        private System.Windows.Forms.Button BtnCerrarSesion;
     }
 }

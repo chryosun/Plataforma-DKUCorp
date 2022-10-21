@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace PlataformaDKUCorp
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+
+        public Login()
         {
             InitializeComponent();
         }
@@ -22,8 +23,11 @@ namespace PlataformaDKUCorp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
+            MenuAdmin menufrm = new MenuAdmin(this);
+            menufrm.Show();
             
         }
     }
