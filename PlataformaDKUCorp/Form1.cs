@@ -16,12 +16,5 @@ namespace PlataformaDKUCorp
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Interfaz_Administrador titulo = new Interfaz_Administrador();
-            titulo.Text = "Bienvenido Administrador";
-            titulo.ShowDialog();
-        }
     }
 }
