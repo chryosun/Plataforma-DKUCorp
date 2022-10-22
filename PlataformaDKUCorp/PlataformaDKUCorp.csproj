@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion a BD\ConexionBD.cs" />
     <Compile Include="Gestion de Usuario\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,5 +134,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
