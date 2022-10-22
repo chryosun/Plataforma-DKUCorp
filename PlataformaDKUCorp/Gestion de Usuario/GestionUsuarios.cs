@@ -12,8 +12,10 @@ namespace PlataformaDKUCorp
 {
     public partial class GestionUsuarios : Form
     {
-        public GestionUsuarios()
+        public Form RefToMenuAdmin { get; set; }
+        public GestionUsuarios(Form frm)
         {
+            RefToMenuAdmin = frm;
             InitializeComponent();
         }
 
@@ -43,6 +45,12 @@ namespace PlataformaDKUCorp
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
             Gestion_de_Usuario.UsuarioDAL.ShowDGView(dgvUsuario);
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            RefToMenuAdmin.Show();
+            this.Close();
         }
     }
 }

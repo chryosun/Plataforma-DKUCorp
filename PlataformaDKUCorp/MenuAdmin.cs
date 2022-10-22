@@ -24,7 +24,7 @@ namespace PlataformaDKUCorp
         private void Btn_GtestionUsuario_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GestionUsuarios formPrueba = new GestionUsuarios();
+            GestionUsuarios formPrueba = new GestionUsuarios(this);
             formPrueba.ShowDialog();
         }
 
