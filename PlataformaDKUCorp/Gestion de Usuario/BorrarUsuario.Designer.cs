@@ -89,6 +89,9 @@
             this.Controls.Add(this.TxtNombreBorrar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BorrarUsuario";
             this.Text = "BorrarUsuario";
             this.ResumeLayout(false);
