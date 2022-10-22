@@ -16,5 +16,15 @@ namespace PlataformaDKUCorp
         {
             InitializeComponent();
         }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            Gestion_de_Usuario.UsuarioDAL.AgregarUsuario(TxtNombreAgregar.Text, TxtContraseñaAgregar.Text, TxtTipoAgregar.Text);
+        }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

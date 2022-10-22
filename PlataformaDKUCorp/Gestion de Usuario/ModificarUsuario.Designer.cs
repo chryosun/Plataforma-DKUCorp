@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnMod = new System.Windows.Forms.Button();
             this.BtnRegistrar = new System.Windows.Forms.Button();
             this.TxtNombreMod = new System.Windows.Forms.TextBox();
             this.TxtNuevoCampoMod = new System.Windows.Forms.TextBox();
@@ -39,14 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // BtnAgregar
+            // BtnMod
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(193, 239);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.BtnAgregar.TabIndex = 26;
-            this.BtnAgregar.Text = "Ejecutar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnMod.Location = new System.Drawing.Point(193, 239);
+            this.BtnMod.Name = "BtnMod";
+            this.BtnMod.Size = new System.Drawing.Size(75, 23);
+            this.BtnMod.TabIndex = 26;
+            this.BtnMod.Text = "Ejecutar";
+            this.BtnMod.UseVisualStyleBackColor = true;
+            this.BtnMod.Click += new System.EventHandler(this.BtnMod_Click);
             // 
             // BtnRegistrar
             // 
@@ -56,6 +57,7 @@
             this.BtnRegistrar.TabIndex = 25;
             this.BtnRegistrar.Text = "Regresar";
             this.BtnRegistrar.UseVisualStyleBackColor = true;
+            this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // TxtNombreMod
             // 
@@ -120,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 299);
-            this.Controls.Add(this.BtnAgregar);
+            this.Controls.Add(this.BtnMod);
             this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.TxtNombreMod);
             this.Controls.Add(this.TxtNuevoCampoMod);
@@ -142,7 +144,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Button BtnMod;
         private System.Windows.Forms.Button BtnRegistrar;
         private System.Windows.Forms.TextBox TxtNombreMod;
         private System.Windows.Forms.TextBox TxtNuevoCampoMod;

@@ -21,5 +21,15 @@ namespace PlataformaDKUCorp.Gestion_de_Usuario
         {
 
         }
+
+        private void BtnMod_Click(object sender, EventArgs e)
+        {
+            Gestion_de_Usuario.UsuarioDAL.ModificarUsuario(TxtCampoMod.Text, TxtNombreMod.Text, TxtNuevoCampoMod.Text);
+        }
+
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

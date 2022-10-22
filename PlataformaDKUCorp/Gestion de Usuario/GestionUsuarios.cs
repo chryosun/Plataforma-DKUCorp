@@ -25,24 +25,24 @@ namespace PlataformaDKUCorp
         private void Btn_Registrar_Click(object sender, EventArgs e)
         {
             AgregarUsuario frmAgregar = new AgregarUsuario();
-            frmAgregar.Show();
+            frmAgregar.ShowDialog();
         }
 
         private void Btn_Borrar_Click(object sender, EventArgs e)
         {
             BorrarUsuario frmBorrar = new BorrarUsuario();
-            frmBorrar.Show();
+            frmBorrar.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Gestion_de_Usuario.ModificarUsuario frmModificar = new Gestion_de_Usuario.ModificarUsuario();
-            frmModificar.Show();
+            frmModificar.ShowDialog();
         }
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
-
+            Gestion_de_Usuario.UsuarioDAL.ShowDGView(dgvUsuario);
         }
     }
 }

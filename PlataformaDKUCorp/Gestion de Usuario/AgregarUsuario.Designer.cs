@@ -105,15 +105,17 @@
             this.BtnRegistrar.TabIndex = 7;
             this.BtnRegistrar.Text = "Regresar";
             this.BtnRegistrar.UseVisualStyleBackColor = true;
+            this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(192, 233);
+            this.BtnAgregar.Location = new System.Drawing.Point(197, 233);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
             this.BtnAgregar.TabIndex = 8;
             this.BtnAgregar.Text = "Ejecutar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // AgregarUsuario
             // 

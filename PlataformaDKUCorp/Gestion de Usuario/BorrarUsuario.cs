@@ -16,5 +16,15 @@ namespace PlataformaDKUCorp
         {
             InitializeComponent();
         }
+
+        private void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            Gestion_de_Usuario.UsuarioDAL.BorrarUsuario(TxtNombreBorrar.Text);
+        }
+
+        private void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

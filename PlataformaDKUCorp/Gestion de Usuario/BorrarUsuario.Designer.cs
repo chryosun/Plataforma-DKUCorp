@@ -43,6 +43,7 @@
             this.BtnBorrar.TabIndex = 17;
             this.BtnBorrar.Text = "Borrar";
             this.BtnBorrar.UseVisualStyleBackColor = true;
+            this.BtnBorrar.Click += new System.EventHandler(this.BtnBorrar_Click);
             // 
             // BtnRegresar
             // 
@@ -52,6 +53,7 @@
             this.BtnRegresar.TabIndex = 16;
             this.BtnRegresar.Text = "Regresar";
             this.BtnRegresar.UseVisualStyleBackColor = true;
+            this.BtnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
             // 
             // TxtNombreBorrar
             // 
