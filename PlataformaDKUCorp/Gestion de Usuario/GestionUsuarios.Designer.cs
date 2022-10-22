@@ -33,7 +33,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Btn_Registrar = new System.Windows.Forms.Button();
             this.Btn_Borrar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
             this.Btn_Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.Btn_Registrar.TabIndex = 3;
             this.Btn_Registrar.Text = "Registrar Usuario";
             this.Btn_Registrar.UseVisualStyleBackColor = true;
+            this.Btn_Registrar.Click += new System.EventHandler(this.Btn_Registrar_Click);
             // 
             // Btn_Borrar
             // 
@@ -82,15 +83,17 @@
             this.Btn_Borrar.TabIndex = 4;
             this.Btn_Borrar.Text = "Borrar Usaurio";
             this.Btn_Borrar.UseVisualStyleBackColor = true;
+            this.Btn_Borrar.Click += new System.EventHandler(this.Btn_Borrar_Click);
             // 
-            // button3
+            // BtnModificar
             // 
-            this.button3.Location = new System.Drawing.Point(633, 266);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 40);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Modificar Usuario";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnModificar.Location = new System.Drawing.Point(633, 266);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(142, 40);
+            this.BtnModificar.TabIndex = 5;
+            this.BtnModificar.Text = "Modificar Usuario";
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.button3_Click);
             // 
             // Btn_Save
             // 
@@ -107,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(804, 452);
             this.Controls.Add(this.Btn_Save);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.Btn_Borrar);
             this.Controls.Add(this.Btn_Registrar);
             this.Controls.Add(this.dataGridView1);
@@ -117,6 +120,7 @@
             this.MaximizeBox = false;
             this.Name = "GestionUsuarios";
             this.Text = "Gestion de Usuarios";
+            this.Load += new System.EventHandler(this.GestionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,7 +134,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Btn_Registrar;
         private System.Windows.Forms.Button Btn_Borrar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button Btn_Save;
     }
 }

@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gestion de Usuario\AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Usuario\AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion de Usuario\BorrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Usuario\BorrarUsuario.Designer.cs">
+      <DependentUpon>BorrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="elkleb.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="elkleb.Designer.cs">
       <DependentUpon>elkleb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion de Usuario\ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion de Usuario\ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -58,10 +76,10 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionUsuarios.cs">
+    <Compile Include="Gestion de Usuario\GestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionUsuarios.Designer.cs">
+    <Compile Include="Gestion de Usuario\GestionUsuarios.Designer.cs">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdmin.cs">
@@ -72,13 +90,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Gestion de Usuario\AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion de Usuario\BorrarUsuario.resx">
+      <DependentUpon>BorrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="elkleb.resx">
       <DependentUpon>elkleb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion de Usuario\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionUsuarios.resx">
+    <EmbeddedResource Include="Gestion de Usuario\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin.resx">
