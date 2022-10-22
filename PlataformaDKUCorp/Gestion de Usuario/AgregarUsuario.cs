@@ -12,6 +12,7 @@ namespace PlataformaDKUCorp
 {
     public partial class AgregarUsuario : Form
     {
+        
         public AgregarUsuario()
         {
             InitializeComponent();

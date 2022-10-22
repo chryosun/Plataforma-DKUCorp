@@ -52,5 +52,10 @@ namespace PlataformaDKUCorp
             RefToMenuAdmin.Show();
             this.Close();
         }
+
+        private void BtnRefrescar_Click(object sender, EventArgs e)
+        {
+            Gestion_de_Usuario.UsuarioDAL.ShowDGView(dgvUsuario);
+        }
     }
 }
