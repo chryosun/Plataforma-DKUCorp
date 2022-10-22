@@ -21,6 +21,9 @@ namespace PlataformaDKUCorp
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             Gestion_de_Usuario.UsuarioDAL.AgregarUsuario(TxtNombreAgregar.Text, TxtContraseñaAgregar.Text, TxtTipoAgregar.Text);
+            TxtNombreAgregar.Clear();
+            TxtContraseñaAgregar.Clear();
+            TxtTipoAgregar.Clear();
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)

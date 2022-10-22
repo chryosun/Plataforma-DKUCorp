@@ -20,6 +20,7 @@ namespace PlataformaDKUCorp
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
             Gestion_de_Usuario.UsuarioDAL.BorrarUsuario(TxtNombreBorrar.Text);
+            TxtNombreBorrar.Clear();
         }
 
         private void BtnRegresar_Click(object sender, EventArgs e)
