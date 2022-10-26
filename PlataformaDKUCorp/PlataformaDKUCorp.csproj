@@ -47,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion a BD\ConexionBD.cs" />
+    <Compile Include="Creacion de Cuestionario\AgregarCuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\AgregarCuestionario.Designer.cs">
+      <DependentUpon>AgregarCuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\DiseñoCuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\DiseñoCuestionario.Designer.cs">
+      <DependentUpon>DiseñoCuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\SeleccionCuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\SeleccionCuestionario.Designer.cs">
+      <DependentUpon>SeleccionCuestionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gestion de Usuario\AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,14 +102,32 @@
     <Compile Include="Gestion de Usuario\GestionUsuarios.Designer.cs">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAdmin.cs">
+    <Compile Include="Gestion de Usuario\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="Gestion de Usuario\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\MenuMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creacion de Cuestionario\MenuMaestro.Designer.cs">
+      <DependentUpon>MenuMaestro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Creacion de Cuestionario\AgregarCuestionario.resx">
+      <DependentUpon>AgregarCuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creacion de Cuestionario\DiseñoCuestionario.resx">
+      <DependentUpon>DiseñoCuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creacion de Cuestionario\MenuMaestro.resx">
+      <DependentUpon>MenuMaestro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creacion de Cuestionario\SeleccionCuestionario.resx">
+      <DependentUpon>SeleccionCuestionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestion de Usuario\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,7 +146,7 @@
     <EmbeddedResource Include="Gestion de Usuario\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin.resx">
+    <EmbeddedResource Include="Gestion de Usuario\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
