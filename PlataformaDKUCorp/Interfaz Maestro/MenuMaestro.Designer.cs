@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnEleccion2 = new System.Windows.Forms.Button();
-            this.BtnEleccion3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,9 +51,10 @@
             this.BtnEleccion1.Name = "BtnEleccion1";
             this.BtnEleccion1.Size = new System.Drawing.Size(256, 29);
             this.BtnEleccion1.TabIndex = 6;
-            this.BtnEleccion1.Text = "Introducción a Contabilidad";
+            this.BtnEleccion1.Text = "Introducción a Contabilidad_1501\r\n\r\n";
             this.BtnEleccion1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEleccion1.UseVisualStyleBackColor = true;
+            this.BtnEleccion1.Click += new System.EventHandler(this.BtnEleccion1_Click);
             // 
             // label2
             // 
@@ -78,35 +77,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnEleccion3);
-            this.groupBox1.Controls.Add(this.BtnEleccion2);
             this.groupBox1.Controls.Add(this.BtnEleccion1);
-            this.groupBox1.Location = new System.Drawing.Point(163, 158);
+            this.groupBox1.Location = new System.Drawing.Point(158, 148);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 159);
+            this.groupBox1.Size = new System.Drawing.Size(316, 85);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignaturas disponibles:";
-            // 
-            // BtnEleccion2
-            // 
-            this.BtnEleccion2.Location = new System.Drawing.Point(28, 71);
-            this.BtnEleccion2.Name = "BtnEleccion2";
-            this.BtnEleccion2.Size = new System.Drawing.Size(256, 29);
-            this.BtnEleccion2.TabIndex = 7;
-            this.BtnEleccion2.Text = "Mercadotecnia Internacional";
-            this.BtnEleccion2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEleccion2.UseVisualStyleBackColor = true;
-            // 
-            // BtnEleccion3
-            // 
-            this.BtnEleccion3.Location = new System.Drawing.Point(28, 106);
-            this.BtnEleccion3.Name = "BtnEleccion3";
-            this.BtnEleccion3.Size = new System.Drawing.Size(256, 29);
-            this.BtnEleccion3.TabIndex = 8;
-            this.BtnEleccion3.Text = "Gestion de Proyectos";
-            this.BtnEleccion3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEleccion3.UseVisualStyleBackColor = true;
             // 
             // MenuMaestro
             // 
@@ -132,7 +109,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button BtnEleccion3;
-        private System.Windows.Forms.Button BtnEleccion2;
     }
 }

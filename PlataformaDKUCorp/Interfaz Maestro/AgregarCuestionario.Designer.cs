@@ -43,7 +43,7 @@
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(202, 356);
+            this.BtnAgregar.Location = new System.Drawing.Point(229, 356);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
             this.BtnAgregar.TabIndex = 17;
@@ -52,7 +52,7 @@
             // 
             // BtnRegistrar
             // 
-            this.BtnRegistrar.Location = new System.Drawing.Point(57, 356);
+            this.BtnRegistrar.Location = new System.Drawing.Point(22, 356);
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.BtnRegistrar.TabIndex = 16;
@@ -61,21 +61,21 @@
             // 
             // TxtPreguntaCuest
             // 
-            this.TxtPreguntaCuest.Location = new System.Drawing.Point(158, 165);
+            this.TxtPreguntaCuest.Location = new System.Drawing.Point(158, 115);
             this.TxtPreguntaCuest.Name = "TxtPreguntaCuest";
             this.TxtPreguntaCuest.Size = new System.Drawing.Size(119, 20);
             this.TxtPreguntaCuest.TabIndex = 15;
             // 
             // TxtPuntuacionCuest
             // 
-            this.TxtPuntuacionCuest.Location = new System.Drawing.Point(158, 205);
+            this.TxtPuntuacionCuest.Location = new System.Drawing.Point(158, 155);
             this.TxtPuntuacionCuest.Name = "TxtPuntuacionCuest";
             this.TxtPuntuacionCuest.Size = new System.Drawing.Size(119, 20);
             this.TxtPuntuacionCuest.TabIndex = 14;
             // 
             // TxtNombreCuest
             // 
-            this.TxtNombreCuest.Location = new System.Drawing.Point(158, 122);
+            this.TxtNombreCuest.Location = new System.Drawing.Point(158, 68);
             this.TxtNombreCuest.Name = "TxtNombreCuest";
             this.TxtNombreCuest.Size = new System.Drawing.Size(119, 20);
             this.TxtNombreCuest.TabIndex = 13;
@@ -84,7 +84,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(74, 55);
+            this.label4.Location = new System.Drawing.Point(71, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(192, 25);
             this.label4.TabIndex = 12;
@@ -93,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 208);
+            this.label3.Location = new System.Drawing.Point(49, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 11;
@@ -102,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 168);
+            this.label2.Location = new System.Drawing.Point(19, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 13);
             this.label2.TabIndex = 10;
@@ -112,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 125);
+            this.label1.Location = new System.Drawing.Point(29, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 13);
             this.label1.TabIndex = 9;
@@ -120,7 +120,7 @@
             // 
             // TxtDescCuest
             // 
-            this.TxtDescCuest.Location = new System.Drawing.Point(158, 276);
+            this.TxtDescCuest.Location = new System.Drawing.Point(158, 226);
             this.TxtDescCuest.Multiline = true;
             this.TxtDescCuest.Name = "TxtDescCuest";
             this.TxtDescCuest.Size = new System.Drawing.Size(119, 49);
@@ -129,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 294);
+            this.label5.Location = new System.Drawing.Point(8, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 13);
             this.label5.TabIndex = 19;

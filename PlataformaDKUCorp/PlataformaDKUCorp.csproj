@@ -47,23 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion a BD\ConexionBD.cs" />
-    <Compile Include="Creacion de Cuestionario\AgregarCuestionario.cs">
+    <Compile Include="Interfaz Maestro\AgregarCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\AgregarCuestionario.Designer.cs">
+    <Compile Include="Interfaz Maestro\AgregarCuestionario.Designer.cs">
       <DependentUpon>AgregarCuestionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\DiseñoCuestionario.cs">
+    <Compile Include="Interfaz Maestro\DiseñoCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\DiseñoCuestionario.Designer.cs">
+    <Compile Include="Interfaz Maestro\DiseñoCuestionario.Designer.cs">
       <DependentUpon>DiseñoCuestionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\SeleccionCuestionario.cs">
+    <Compile Include="Interfaz Maestro\Asignatura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\SeleccionCuestionario.Designer.cs">
-      <DependentUpon>SeleccionCuestionario.cs</DependentUpon>
+    <Compile Include="Interfaz Maestro\Asignatura.Designer.cs">
+      <DependentUpon>Asignatura.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestion de Usuario\AgregarUsuario.cs">
       <SubType>Form</SubType>
@@ -108,25 +108,26 @@
     <Compile Include="Gestion de Usuario\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\MenuMaestro.cs">
+    <Compile Include="Interfaz Maestro\MenuMaestro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Creacion de Cuestionario\MenuMaestro.Designer.cs">
+    <Compile Include="Interfaz Maestro\MenuMaestro.Designer.cs">
       <DependentUpon>MenuMaestro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Creacion de Cuestionario\AgregarCuestionario.resx">
+    <Compile Include="ValidacionesTxt.cs" />
+    <EmbeddedResource Include="Interfaz Maestro\AgregarCuestionario.resx">
       <DependentUpon>AgregarCuestionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Creacion de Cuestionario\DiseñoCuestionario.resx">
+    <EmbeddedResource Include="Interfaz Maestro\DiseñoCuestionario.resx">
       <DependentUpon>DiseñoCuestionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Creacion de Cuestionario\MenuMaestro.resx">
+    <EmbeddedResource Include="Interfaz Maestro\MenuMaestro.resx">
       <DependentUpon>MenuMaestro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Creacion de Cuestionario\SeleccionCuestionario.resx">
-      <DependentUpon>SeleccionCuestionario.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz Maestro\Asignatura.resx">
+      <DependentUpon>Asignatura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de Usuario\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
@@ -177,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh_FILL0_wght400_GRAD0_opsz48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\javiergod.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
