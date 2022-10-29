@@ -26,5 +26,11 @@ namespace PlataformaDKUCorp
             this.Hide();
             frmClase.Show();
         }
+
+        private void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            RefToLogin.Show();
+            this.Close();
+        }
     }
 }

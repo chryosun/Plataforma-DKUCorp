@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion a BD\ConexionBD.cs" />
-    <Compile Include="Interfaz Maestro\AgregarCuestionario.cs">
+    <Compile Include="Interfaz Maestro\DatosCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz Maestro\AgregarCuestionario.Designer.cs">
-      <DependentUpon>AgregarCuestionario.cs</DependentUpon>
+    <Compile Include="Interfaz Maestro\DatosCuestionario.Designer.cs">
+      <DependentUpon>DatosCuestionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz Maestro\DiseñoCuestionario.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidacionesTxt.cs" />
-    <EmbeddedResource Include="Interfaz Maestro\AgregarCuestionario.resx">
-      <DependentUpon>AgregarCuestionario.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz Maestro\DatosCuestionario.resx">
+      <DependentUpon>DatosCuestionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz Maestro\DiseñoCuestionario.resx">
       <DependentUpon>DiseñoCuestionario.cs</DependentUpon>

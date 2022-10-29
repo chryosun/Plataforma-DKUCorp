@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 {
-    public partial class AgregarCuestionario : Form
+    public partial class DatosCuestionario : Form
     {
-        public AgregarCuestionario()
+        public DatosCuestionario()
         {
             InitializeComponent();
         }

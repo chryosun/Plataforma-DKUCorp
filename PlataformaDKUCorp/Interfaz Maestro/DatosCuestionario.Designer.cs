@@ -1,6 +1,6 @@
 ﻿namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 {
-    partial class AgregarCuestionario
+    partial class DatosCuestionario
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(229, 356);
+            this.BtnAgregar.Location = new System.Drawing.Point(254, 446);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
             this.BtnAgregar.TabIndex = 17;
@@ -52,7 +52,7 @@
             // 
             // BtnRegistrar
             // 
-            this.BtnRegistrar.Location = new System.Drawing.Point(22, 356);
+            this.BtnRegistrar.Location = new System.Drawing.Point(29, 446);
             this.BtnRegistrar.Name = "BtnRegistrar";
             this.BtnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.BtnRegistrar.TabIndex = 16;
@@ -61,23 +61,23 @@
             // 
             // TxtPreguntaCuest
             // 
-            this.TxtPreguntaCuest.Location = new System.Drawing.Point(158, 115);
+            this.TxtPreguntaCuest.Location = new System.Drawing.Point(33, 135);
             this.TxtPreguntaCuest.Name = "TxtPreguntaCuest";
-            this.TxtPreguntaCuest.Size = new System.Drawing.Size(119, 20);
+            this.TxtPreguntaCuest.Size = new System.Drawing.Size(250, 20);
             this.TxtPreguntaCuest.TabIndex = 15;
             // 
             // TxtPuntuacionCuest
             // 
-            this.TxtPuntuacionCuest.Location = new System.Drawing.Point(158, 155);
+            this.TxtPuntuacionCuest.Location = new System.Drawing.Point(33, 185);
             this.TxtPuntuacionCuest.Name = "TxtPuntuacionCuest";
-            this.TxtPuntuacionCuest.Size = new System.Drawing.Size(119, 20);
+            this.TxtPuntuacionCuest.Size = new System.Drawing.Size(69, 20);
             this.TxtPuntuacionCuest.TabIndex = 14;
             // 
             // TxtNombreCuest
             // 
-            this.TxtNombreCuest.Location = new System.Drawing.Point(158, 68);
+            this.TxtNombreCuest.Location = new System.Drawing.Point(33, 84);
             this.TxtNombreCuest.Name = "TxtNombreCuest";
-            this.TxtNombreCuest.Size = new System.Drawing.Size(119, 20);
+            this.TxtNombreCuest.Size = new System.Drawing.Size(252, 20);
             this.TxtNombreCuest.TabIndex = 13;
             // 
             // label4
@@ -93,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 158);
+            this.label3.Location = new System.Drawing.Point(32, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 11;
@@ -102,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 118);
+            this.label2.Location = new System.Drawing.Point(30, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 13);
             this.label2.TabIndex = 10;
@@ -112,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 75);
+            this.label1.Location = new System.Drawing.Point(32, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 13);
             this.label1.TabIndex = 9;
@@ -120,26 +120,26 @@
             // 
             // TxtDescCuest
             // 
-            this.TxtDescCuest.Location = new System.Drawing.Point(158, 226);
+            this.TxtDescCuest.Location = new System.Drawing.Point(33, 237);
             this.TxtDescCuest.Multiline = true;
             this.TxtDescCuest.Name = "TxtDescCuest";
-            this.TxtDescCuest.Size = new System.Drawing.Size(119, 49);
+            this.TxtDescCuest.Size = new System.Drawing.Size(275, 163);
             this.TxtDescCuest.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 244);
+            this.label5.Location = new System.Drawing.Point(30, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 13);
             this.label5.TabIndex = 19;
             this.label5.Text = "Descripcion del Cuestionario:";
             // 
-            // AgregarCuestionario
+            // DatosCuestionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 403);
+            this.ClientSize = new System.Drawing.Size(350, 481);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtDescCuest);
             this.Controls.Add(this.BtnAgregar);
@@ -151,7 +151,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AgregarCuestionario";
+            this.Name = "DatosCuestionario";
             this.Text = "Crear Cuestionario";
             this.ResumeLayout(false);
             this.PerformLayout();
