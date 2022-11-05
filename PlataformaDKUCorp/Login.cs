@@ -86,8 +86,14 @@ namespace PlataformaDKUCorp
 
         private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnIngresar_Click(sender, e);
+            }
+            else
+            {
                 ValidacionesTxt.ConfTxt(e);
-            
+            }
         }
     }
 }

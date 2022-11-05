@@ -40,6 +40,7 @@
             this.TxtDescCuest = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnEditar = new System.Windows.Forms.Button();
+            this.BtnGuardarConfig = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnAgregar
@@ -160,18 +161,32 @@
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnEditar.Location = new System.Drawing.Point(209, 518);
+            this.BtnEditar.Location = new System.Drawing.Point(222, 518);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(161, 35);
             this.BtnEditar.TabIndex = 20;
             this.BtnEditar.Text = "Editar Cuestionario";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // BtnGuardarConfig
+            // 
+            this.BtnGuardarConfig.BackgroundImage = global::PlataformaDKUCorp.Properties.Resources.save_FILL0_wght400_GRAD0_opsz48;
+            this.BtnGuardarConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnGuardarConfig.Location = new System.Drawing.Point(458, 55);
+            this.BtnGuardarConfig.Name = "BtnGuardarConfig";
+            this.BtnGuardarConfig.Size = new System.Drawing.Size(140, 60);
+            this.BtnGuardarConfig.TabIndex = 21;
+            this.BtnGuardarConfig.Text = "Guardar Cambios";
+            this.BtnGuardarConfig.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGuardarConfig.UseVisualStyleBackColor = true;
             // 
             // DatosCuestionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 574);
+            this.Controls.Add(this.BtnGuardarConfig);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtDescCuest);
@@ -205,5 +220,6 @@
         private System.Windows.Forms.TextBox TxtDescCuest;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.Button BtnGuardarConfig;
     }
 }

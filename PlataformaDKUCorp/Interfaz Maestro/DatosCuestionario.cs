@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlataformaDKUCorp.Conexion_a_BD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,10 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         public Form RefToClase { get; set; }
 
-        public DatosCuestionario(Form RefToClase,string CuestNom = "",string numPreguntas = "", string CuestNota = "", string CuestDesc = "")
+        public DatosCuestionario(Form RefToClase,bool bandera,string CuestNom = "",string numPreguntas = "", string CuestNota = "", string CuestDesc = "")
         {
             InitializeComponent();
+            BtnAgregar.Enabled = bandera;
             this.TxtNombreCuest.Text = CuestNom;
             this.TxtPreguntaCuest.Text = numPreguntas;
             this.TxtPuntuacionCuest.Text = CuestNota;
@@ -35,6 +37,23 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
         {
             RefToClase.Show();
             this.Close();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConexionBD.ObtenerConexion();
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error al manejar arreglos con la base de datos\nContacte al IT mas cercano","ERROR\n" + e.Message);
+            }
+            finally
+            {
+                ConexionBD.CerrarConexion();
+            }
         }
     }
 }

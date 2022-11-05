@@ -31,7 +31,7 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         private void BtnNuevoCuest_Click(object sender, EventArgs e)
         {
-            Creacion_de_Cuestionario.DatosCuestionario formCuest = new DatosCuestionario(this);
+            Creacion_de_Cuestionario.DatosCuestionario formCuest = new DatosCuestionario(this,true);
             formCuest.ShowDialog();
         }
 
@@ -111,9 +111,10 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
                 sda.Fill(dt);
 
                 //Guardar datos del constructor en su respectivo Textbox
-                DatosCuestionario dtCuest = new DatosCuestionario(this,dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
+                DatosCuestionario dtCuest = new DatosCuestionario(this,false,dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
                 this.Hide();
                 dtCuest.Show();
+                
 
             }
             catch (Exception ex)
