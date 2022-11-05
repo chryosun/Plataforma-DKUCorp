@@ -41,19 +41,16 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            try
+            if(this.BtnAgregar.Enabled == true)
             {
-                ConexionBD.ObtenerConexion();
+                DesignCuestionario dC = new DesignCuestionario();
+                dC.ShowDialog();
+            }
+            else
+            {
+                //Traer diseño de ejercicios diferente
+            }
 
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show("Error al manejar arreglos con la base de datos\nContacte al IT mas cercano","ERROR\n" + e.Message);
-            }
-            finally
-            {
-                ConexionBD.CerrarConexion();
-            }
         }
     }
 }
