@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.BtnCerrarSesion = new System.Windows.Forms.Button();
-            this.BtnEleccion1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnCerrarSesion
@@ -45,17 +43,6 @@
             this.BtnCerrarSesion.Text = "Cerrar Sesion";
             this.BtnCerrarSesion.UseVisualStyleBackColor = true;
             this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
-            // 
-            // BtnEleccion1
-            // 
-            this.BtnEleccion1.Location = new System.Drawing.Point(28, 36);
-            this.BtnEleccion1.Name = "BtnEleccion1";
-            this.BtnEleccion1.Size = new System.Drawing.Size(256, 29);
-            this.BtnEleccion1.TabIndex = 6;
-            this.BtnEleccion1.Text = "Introducción a Contabilidad_1501\r\n\r\n";
-            this.BtnEleccion1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEleccion1.UseVisualStyleBackColor = true;
-            this.BtnEleccion1.Click += new System.EventHandler(this.BtnEleccion1_Click);
             // 
             // label2
             // 
@@ -78,7 +65,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnEleccion1);
             this.groupBox1.Location = new System.Drawing.Point(158, 148);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 85);
@@ -97,7 +83,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MenuMaestro";
             this.Text = "Menu Principal";
-            this.groupBox1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.MenuMaestro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +92,6 @@
         #endregion
 
         private System.Windows.Forms.Button BtnCerrarSesion;
-        private System.Windows.Forms.Button BtnEleccion1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

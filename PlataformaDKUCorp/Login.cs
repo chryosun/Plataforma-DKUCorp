@@ -39,24 +39,27 @@ namespace PlataformaDKUCorp
 
                 if (dt.Rows.Count == 1)
                 {
-                    txtUsuario.Clear();
-                    txtContra.Clear();
-                    
                     if (dt.Rows[0][1].ToString() == "A")
                     {
                         MenuAdmin menufrm = new MenuAdmin(this);
+                        Sesion s = new Sesion(txtUsuario.Text, 'A');
                         menufrm.Show();
+                        
                     }
                     else if (dt.Rows[0][1].ToString() == "M")
                     {
                         MenuMaestro frmmaster = new MenuMaestro(this);
+                        Sesion s = new Sesion(txtUsuario.Text, 'M');
                         frmmaster.Show();
+                        
                     }
                     else if (dt.Rows[0][1].ToString() == "E")
                     {
 
                     }
                     this.Hide();
+                    txtUsuario.Clear();
+                    txtContra.Clear();
                 }
                 else
                 {
@@ -83,7 +86,8 @@ namespace PlataformaDKUCorp
 
         private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidacionesTxt.ConfTxt(e);
+                ValidacionesTxt.ConfTxt(e);
+            
         }
     }
 }

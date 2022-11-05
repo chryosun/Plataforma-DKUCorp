@@ -29,32 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.BtnNuevoCuest = new System.Windows.Forms.Button();
             this.NombreClase = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(65, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 93);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cuestionarios Disponibles";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(84, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(240, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cuestionario 1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BtnNuevoCuest
             // 
@@ -100,7 +87,6 @@
             this.Name = "Asignatura";
             this.Text = "<placeholderNom>";
             this.Load += new System.EventHandler(this.Asignatura_Load);
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +95,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BtnNuevoCuest;
         private System.Windows.Forms.Label NombreClase;
         private System.Windows.Forms.Button btnRegresar;

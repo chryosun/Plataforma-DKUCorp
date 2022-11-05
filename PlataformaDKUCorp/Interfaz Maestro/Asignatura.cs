@@ -31,7 +31,7 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         private void BtnNuevoCuest_Click(object sender, EventArgs e)
         {
-            Creacion_de_Cuestionario.DatosCuestionario formCuest = new DatosCuestionario();
+            Creacion_de_Cuestionario.DatosCuestionario formCuest = new DatosCuestionario(this);
             formCuest.ShowDialog();
         }
 
@@ -58,21 +58,22 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             int count = NombreClase.Text.Split(' ').Count();
             //int paddingbottom = 20;
             int y = 35;
+            this.groupBox1.AutoSize = true;
 
             try
             {
                 Conexion_a_BD.ConexionBD.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("SP_BuscarCuestionarios", Conexion_a_BD.ConexionBD.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("sec", SqlDbType.VarChar).Value = NombreClase.Text.Split(' ')[count - 1];
-                comando.Parameters.AddWithValue("clase", SqlDbType.VarChar).Value = this.Text;
+                comando.Parameters.AddWithValue("sec", SqlDbType.VarChar).Value = Seccion;
+                comando.Parameters.AddWithValue("clase", SqlDbType.VarChar).Value = Clase;
                 SqlDataAdapter sda = new SqlDataAdapter(comando);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
                 // Agregar los botones dinamicamente
 
-                for (int countButton = 0; countButton <= dt.Rows.Count; countButton++)
+                for (int countButton = 0; countButton <= dt.Rows.Count - 1; countButton++)
                 {
                     Button temp = new Button();
 
@@ -82,7 +83,8 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
                     temp.Name = "btnCuestionario" + (countButton + 1).ToString();
                     temp.Text = dt.Rows[countButton][0].ToString();
                     temp.Click += new EventHandler(BtnCuestExistenteComun_Click);
-                    Controls.Add(temp);
+                    this.groupBox1.Controls.Add(temp);
+                    
                     
                 }
             }
@@ -103,21 +105,15 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             {
                 Conexion_a_BD.ConexionBD.ObtenerConexion();
                 SqlDataAdapter sda = new SqlDataAdapter();
-                sda.SelectCommand = new SqlCommand("SELECT CuestNom, NumPreguntas,CuestNota,CuestDesc FROM Cuestionario" +
+                sda.SelectCommand = new SqlCommand("SELECT CuestNom, NumPreguntas,CuestNota,CuestDesc FROM Cuestionario " +
                     "WHERE CuestNom = '" + ((Button)sender).Text + "'", Conexion_a_BD.ConexionBD.conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
-                DatosCuestionario dtCuest = new DatosCuestionario();
-
-                //Busca los controles en un punto especifico del form e ingresamos a su propiedad
-                //Text una de las celdas conseguida del resultado del SELECT
-
-                dtCuest.GetChildAtPoint(new Point(33, 84)).Text = dt.Rows[0][0].ToString();
-                dtCuest.GetChildAtPoint(new Point(33, 135)).Text = dt.Rows[0][1].ToString();
-                dtCuest.GetChildAtPoint(new Point(33, 185)).Text = dt.Rows[0][2].ToString();
-                dtCuest.GetChildAtPoint(new Point(33, 237)).Text = dt.Rows[0][3].ToString();
-
+                //Guardar datos del constructor en su respectivo Textbox
+                DatosCuestionario dtCuest = new DatosCuestionario(this,dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
+                this.Hide();
+                dtCuest.Show();
 
             }
             catch (Exception ex)

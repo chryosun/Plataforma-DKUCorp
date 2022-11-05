@@ -62,6 +62,7 @@
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(53, 207);
+            this.txtUsuario.MaxLength = 30;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(299, 35);
             this.txtUsuario.TabIndex = 2;
@@ -91,6 +92,7 @@
             // 
             this.txtContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContra.Location = new System.Drawing.Point(53, 281);
+            this.txtContra.MaxLength = 10;
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(299, 35);
             this.txtContra.TabIndex = 5;
@@ -101,7 +103,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Indigo;
-            this.label4.Location = new System.Drawing.Point(81, 459);
+            this.label4.Location = new System.Drawing.Point(73, 457);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(271, 13);
             this.label4.TabIndex = 6;
