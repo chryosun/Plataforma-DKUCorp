@@ -33,10 +33,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtNombreAgregar = new System.Windows.Forms.TextBox();
-            this.TxtTipoAgregar = new System.Windows.Forms.TextBox();
             this.TxtContraseñaAgregar = new System.Windows.Forms.TextBox();
             this.BtnRegistrar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -80,21 +80,14 @@
             // 
             this.TxtNombreAgregar.Location = new System.Drawing.Point(133, 95);
             this.TxtNombreAgregar.Name = "TxtNombreAgregar";
-            this.TxtNombreAgregar.Size = new System.Drawing.Size(119, 20);
+            this.TxtNombreAgregar.Size = new System.Drawing.Size(139, 20);
             this.TxtNombreAgregar.TabIndex = 4;
-            // 
-            // TxtTipoAgregar
-            // 
-            this.TxtTipoAgregar.Location = new System.Drawing.Point(133, 179);
-            this.TxtTipoAgregar.Name = "TxtTipoAgregar";
-            this.TxtTipoAgregar.Size = new System.Drawing.Size(119, 20);
-            this.TxtTipoAgregar.TabIndex = 5;
             // 
             // TxtContraseñaAgregar
             // 
             this.TxtContraseñaAgregar.Location = new System.Drawing.Point(133, 138);
             this.TxtContraseñaAgregar.Name = "TxtContraseñaAgregar";
-            this.TxtContraseñaAgregar.Size = new System.Drawing.Size(119, 20);
+            this.TxtContraseñaAgregar.Size = new System.Drawing.Size(139, 20);
             this.TxtContraseñaAgregar.TabIndex = 6;
             // 
             // BtnRegistrar
@@ -117,15 +110,25 @@
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // cmbTipoUsuario
+            // 
+            this.cmbTipoUsuario.FormattingEnabled = true;
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(133, 179);
+            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(139, 21);
+            this.cmbTipoUsuario.TabIndex = 9;
+            this.cmbTipoUsuario.Text = "Elija un tipo de Usuario";
+            this.cmbTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbTipoUsuario_SelectedIndexChanged);
+            // 
             // AgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(318, 268);
+            this.Controls.Add(this.cmbTipoUsuario);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.TxtContraseñaAgregar);
-            this.Controls.Add(this.TxtTipoAgregar);
             this.Controls.Add(this.TxtNombreAgregar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -148,9 +151,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxtNombreAgregar;
-        private System.Windows.Forms.TextBox TxtTipoAgregar;
         private System.Windows.Forms.TextBox TxtContraseñaAgregar;
         private System.Windows.Forms.Button BtnRegistrar;
         private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.ComboBox cmbTipoUsuario;
     }
 }

@@ -41,7 +41,7 @@
             this.groupBox1.Size = new System.Drawing.Size(422, 93);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cuestionarios Disponibles";
+            this.groupBox1.Text = "Simuladores Disponibles";
             // 
             // BtnNuevoCuest
             // 

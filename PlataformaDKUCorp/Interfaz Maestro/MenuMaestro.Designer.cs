@@ -31,7 +31,7 @@
             this.BtnCerrarSesion = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClase = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnCerrarSesion
@@ -63,21 +63,23 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Menu Principal";
             // 
-            // groupBox1
+            // btnClase
             // 
-            this.groupBox1.Location = new System.Drawing.Point(158, 148);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(316, 85);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Asignaturas disponibles:";
+            this.btnClase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClase.Location = new System.Drawing.Point(200, 161);
+            this.btnClase.Name = "btnClase";
+            this.btnClase.Size = new System.Drawing.Size(269, 75);
+            this.btnClase.TabIndex = 8;
+            this.btnClase.Text = "FIN101    Introducción a Contabilidad";
+            this.btnClase.UseVisualStyleBackColor = true;
+            this.btnClase.Click += new System.EventHandler(this.btnClase_Click);
             // 
             // MenuMaestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 417);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnClase);
             this.Controls.Add(this.BtnCerrarSesion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -94,6 +96,6 @@
         private System.Windows.Forms.Button BtnCerrarSesion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnClase;
     }
 }

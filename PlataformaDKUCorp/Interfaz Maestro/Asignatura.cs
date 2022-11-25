@@ -17,21 +17,24 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
     public partial class Asignatura : Form
     {
         public Form RefToMenuMaestro { get; set; }
+        /*
         public string Clase { get; set; }
         public string Seccion { get; set; }
+        */
 
 
-        public Asignatura(Form refToMenuMaestro, string clase, string seccion)
+        public Asignatura(Form refToMenuMaestro)/*, string clase, string seccion*/
         {
             InitializeComponent();
             RefToMenuMaestro = refToMenuMaestro;
-            Clase = clase;
+            /*Clase = clase;
             Seccion = seccion;
+            */
         }
 
         private void BtnNuevoCuest_Click(object sender, EventArgs e)
         {
-            Creacion_de_Cuestionario.DatosCuestionario formCuest = new DatosCuestionario(this,true);
+            Creacion_de_Cuestionario.DatosSim formCuest = new DatosSim(this,true);
             formCuest.ShowDialog();
         }
 
@@ -53,9 +56,9 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         private void Asignatura_Load(object sender, EventArgs e)
         {
-            this.Text = Clase;
-            NombreClase.Text = Clase + " " + Seccion;
-            int count = NombreClase.Text.Split(' ').Count();
+            this.Text = "Introducción a Contabilidad";
+            NombreClase.Text = this.Text;
+            //int count = NombreClase.Text.Split(' ').Count();
             //int paddingbottom = 20;
             int y = 35;
             this.groupBox1.AutoSize = true;
@@ -63,10 +66,10 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             try
             {
                 Conexion_a_BD.ConexionBD.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("SP_BuscarCuestionarios", Conexion_a_BD.ConexionBD.conexion);
+                SqlCommand comando = new SqlCommand("SP_BuscarSimulaciones", Conexion_a_BD.ConexionBD.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("sec", SqlDbType.VarChar).Value = Seccion;
-                comando.Parameters.AddWithValue("clase", SqlDbType.VarChar).Value = Clase;
+                //comando.Parameters.AddWithValue("sec", SqlDbType.VarChar).Value = Seccion;
+                comando.Parameters.AddWithValue("clase", SqlDbType.VarChar).Value = NombreClase.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(comando);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -80,7 +83,7 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
                     temp.Height = 30;
                     temp.Width = 240;
                     temp.Location = new Point(84, 41 + y * countButton);
-                    temp.Name = "btnCuestionario" + (countButton + 1).ToString();
+                    temp.Name = "btnSim" + (countButton + 1).ToString();
                     temp.Text = dt.Rows[countButton][0].ToString();
                     temp.Click += new EventHandler(BtnCuestExistenteComun_Click);
                     this.groupBox1.Controls.Add(temp);
@@ -105,15 +108,15 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             {
                 Conexion_a_BD.ConexionBD.ObtenerConexion();
                 SqlDataAdapter sda = new SqlDataAdapter();
-                sda.SelectCommand = new SqlCommand("SELECT CuestNom, NumPreguntas,CuestNota,CuestDesc FROM Cuestionario " +
-                    "WHERE CuestNom = '" + ((Button)sender).Text + "'", Conexion_a_BD.ConexionBD.conexion);
+                sda.SelectCommand = new SqlCommand("SELECT SimNom, NumFases, SimNota, SimDesc, SimID FROM Simulacion " +
+                    "WHERE SimNom = '" + ((Button)sender).Text + "'", Conexion_a_BD.ConexionBD.conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
                 //Guardar datos del constructor en su respectivo Textbox
-                DatosCuestionario dtCuest = new DatosCuestionario(this,false,dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
+                DatosSim dtSim = new DatosSim(this, true,dt.Rows[0][4].ToString(), dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
                 this.Hide();
-                dtCuest.Show();
+                dtSim.Show();
                 
 
             }
@@ -128,6 +131,7 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             }
 
         }
+
     } 
 }
 

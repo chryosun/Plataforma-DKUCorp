@@ -26,12 +26,11 @@ namespace PlataformaDKUCorp
 
         private void MenuMaestro_Load(object sender, EventArgs e)
         {
-            int y = 35;
-            this.groupBox1.AutoSize = true;
-
+            /* CODIGO DESACTUALIZADO EN DESUSO
             try
             {
-                SqlCommand comando = new SqlCommand("SP_BuscarClases", Conexion_a_BD.ConexionBD.conexion);
+                
+                 * SqlCommand comando = new SqlCommand("SP_BuscarClases", Conexion_a_BD.ConexionBD.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("usernom", SqlDbType.VarChar).Value = Sesion.NombreUsuario;
                 comando.Parameters.AddWithValue("tipoUsuario", SqlDbType.Char).Value = Sesion.TipoUsuario;
@@ -56,6 +55,12 @@ namespace PlataformaDKUCorp
 
 
                 }
+                 * 
+
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -66,9 +71,11 @@ namespace PlataformaDKUCorp
             {
                 Conexion_a_BD.ConexionBD.CerrarConexion();
             }
+            
+            FIN CODIGO DESACTUALIZADO   */
         }
 
-        private void BtnClaseExistenteComun_Click(object sender, EventArgs e)
+        /*private void BtnClaseExistenteComun_Click(object sender, EventArgs e)
         {
             try
             {
@@ -86,6 +93,15 @@ namespace PlataformaDKUCorp
             {
                 Conexion_a_BD.ConexionBD.CerrarConexion();
             }
+
+        }
+        */
+
+        private void btnClase_Click(object sender, EventArgs e)
+        {
+            var asig = new Asignatura(this);
+            this.Hide();
+            asig.Show();
 
         }
 
