@@ -32,11 +32,11 @@
             this.BtnRegistrar = new System.Windows.Forms.Button();
             this.TxtNombreMod = new System.Windows.Forms.TextBox();
             this.TxtNuevoCampoMod = new System.Windows.Forms.TextBox();
-            this.TxtCampoMod = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BtnMod
@@ -73,13 +73,6 @@
             this.TxtNuevoCampoMod.Size = new System.Drawing.Size(119, 20);
             this.TxtNuevoCampoMod.TabIndex = 23;
             // 
-            // TxtCampoMod
-            // 
-            this.TxtCampoMod.Location = new System.Drawing.Point(134, 101);
-            this.TxtCampoMod.Name = "TxtCampoMod";
-            this.TxtCampoMod.Size = new System.Drawing.Size(119, 20);
-            this.TxtCampoMod.TabIndex = 22;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -106,7 +99,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Nombre de Usaurio:";
+            this.label2.Text = "Nombre de Usuario:";
             // 
             // label1
             // 
@@ -117,16 +110,25 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Campo a Modificar:";
             // 
+            // cmbCampo
+            // 
+            this.cmbCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Location = new System.Drawing.Point(134, 101);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCampo.TabIndex = 27;
+            // 
             // ModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 299);
+            this.Controls.Add(this.cmbCampo);
             this.Controls.Add(this.BtnMod);
             this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.TxtNombreMod);
             this.Controls.Add(this.TxtNuevoCampoMod);
-            this.Controls.Add(this.TxtCampoMod);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -148,10 +150,10 @@
         private System.Windows.Forms.Button BtnRegistrar;
         private System.Windows.Forms.TextBox TxtNombreMod;
         private System.Windows.Forms.TextBox TxtNuevoCampoMod;
-        private System.Windows.Forms.TextBox TxtCampoMod;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbCampo;
     }
 }

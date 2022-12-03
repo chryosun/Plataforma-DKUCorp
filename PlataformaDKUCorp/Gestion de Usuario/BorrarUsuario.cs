@@ -19,8 +19,23 @@ namespace PlataformaDKUCorp
 
         private void BtnBorrar_Click(object sender, EventArgs e)
         {
-            Gestion_de_Usuario.UsuarioDAL.BorrarUsuario(TxtNombreBorrar.Text);
-            TxtNombreBorrar.Clear();
+            if(TxtNombreBorrar.Text == String.Empty)
+            {
+                MessageBox.Show("Campo \"Nombre de Usuario\" vacío!", "ERROR");
+            }
+            else
+            {
+                try
+                {
+                    Gestion_de_Usuario.UsuarioDAL.BorrarUsuario(TxtNombreBorrar.Text);
+                    TxtNombreBorrar.Clear();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Usuario no existente, intente de nuevo");
+                    TxtNombreBorrar.Clear();
+                }
+            }
         }
 
         private void BtnRegresar_Click(object sender, EventArgs e)

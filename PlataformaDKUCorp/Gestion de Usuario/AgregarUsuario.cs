@@ -31,10 +31,27 @@ namespace PlataformaDKUCorp
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Gestion_de_Usuario.UsuarioDAL.AgregarUsuario(TxtNombreAgregar.Text, TxtContraseñaAgregar.Text, cmbTipoUsuario.SelectedValue.ToString());
-            TxtNombreAgregar.Clear();
-            TxtContraseñaAgregar.Clear();
-            cmbTipoUsuario.SelectedIndex = -1;
+            if(TxtNombreAgregar.Text.Length == 0 || TxtNombreAgregar.Text.Length > 30)
+            {
+                MessageBox.Show("Error: Campo de texto \'Nombre de Usuario\' vacío o superando el limite de 30 caracteres", "ERROR");
+            }
+            else if(TxtContraseñaAgregar.Text.Length < 5 || TxtContraseñaAgregar.Text.Length > 10)
+            {
+                MessageBox.Show("Error: Campo de texto \'Contraseña\' vacío o superando el limite de rango de 5-10 caracteres", "ERROR");
+            }
+            else if(cmbTipoUsuario.SelectedIndex == -1)
+            {
+                MessageBox.Show("Error: La caja de opciones de \'Tipo de Usuario\' sin ninguna, opción seleccionada\n" +
+                    "Elija una opcion de la caja de opciones", "ERROR");
+            }
+            else
+            {
+                Gestion_de_Usuario.UsuarioDAL.AgregarUsuario(TxtNombreAgregar.Text, TxtContraseñaAgregar.Text, cmbTipoUsuario.SelectedValue.ToString());
+                TxtNombreAgregar.Clear();
+                TxtContraseñaAgregar.Clear();
+                cmbTipoUsuario.SelectedIndex = -1;
+            }
+
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)

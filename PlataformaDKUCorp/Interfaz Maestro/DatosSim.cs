@@ -61,9 +61,9 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
                 //DesignCuestionario dC = new DesignCuestionario();
                 //dC.ShowDialog();
 
-                var pr = new prueba();
-                pr.Show();
-                this.Hide();
+                //var pr = new prueba();
+                //pr.Show();
+                //this.Hide();
 
             }
             else

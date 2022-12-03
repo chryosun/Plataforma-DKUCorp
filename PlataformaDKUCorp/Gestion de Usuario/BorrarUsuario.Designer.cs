@@ -58,6 +58,7 @@
             // TxtNombreBorrar
             // 
             this.TxtNombreBorrar.Location = new System.Drawing.Point(121, 110);
+            this.TxtNombreBorrar.MaxLength = 30;
             this.TxtNombreBorrar.Name = "TxtNombreBorrar";
             this.TxtNombreBorrar.Size = new System.Drawing.Size(119, 20);
             this.TxtNombreBorrar.TabIndex = 13;

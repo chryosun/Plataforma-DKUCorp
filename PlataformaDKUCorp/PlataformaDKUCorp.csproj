@@ -75,12 +75,6 @@
     <Compile Include="Interfaz Maestro\ArchivosAdj.Designer.cs">
       <DependentUpon>ArchivosAdj.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz Maestro\prueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz Maestro\prueba.Designer.cs">
-      <DependentUpon>prueba.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaz Maestro\DesignCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,12 +116,6 @@
     </Compile>
     <Compile Include="Gestion de Usuario\BorrarUsuario.Designer.cs">
       <DependentUpon>BorrarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="elkleb.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="elkleb.Designer.cs">
-      <DependentUpon>elkleb.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestion de Usuario\ModificarUsuario.cs">
       <SubType>Form</SubType>
@@ -210,9 +198,6 @@
     <EmbeddedResource Include="Interfaz Maestro\ArchivosAdj.resx">
       <DependentUpon>ArchivosAdj.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz Maestro\prueba.resx">
-      <DependentUpon>prueba.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz Maestro\DesignCuestionario.resx">
       <DependentUpon>DesignCuestionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de Usuario\BorrarUsuario.resx">
       <DependentUpon>BorrarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="elkleb.resx">
-      <DependentUpon>elkleb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion de Usuario\ModificarUsuario.resx">
       <DependentUpon>ModificarUsuario.cs</DependentUpon>

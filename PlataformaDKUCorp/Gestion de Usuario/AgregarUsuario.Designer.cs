@@ -79,6 +79,7 @@
             // TxtNombreAgregar
             // 
             this.TxtNombreAgregar.Location = new System.Drawing.Point(133, 95);
+            this.TxtNombreAgregar.MaxLength = 30;
             this.TxtNombreAgregar.Name = "TxtNombreAgregar";
             this.TxtNombreAgregar.Size = new System.Drawing.Size(139, 20);
             this.TxtNombreAgregar.TabIndex = 4;
@@ -86,6 +87,7 @@
             // TxtContraseñaAgregar
             // 
             this.TxtContraseñaAgregar.Location = new System.Drawing.Point(133, 138);
+            this.TxtContraseñaAgregar.MaxLength = 10;
             this.TxtContraseñaAgregar.Name = "TxtContraseñaAgregar";
             this.TxtContraseñaAgregar.Size = new System.Drawing.Size(139, 20);
             this.TxtContraseñaAgregar.TabIndex = 6;
@@ -112,12 +114,12 @@
             // 
             // cmbTipoUsuario
             // 
+            this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUsuario.FormattingEnabled = true;
             this.cmbTipoUsuario.Location = new System.Drawing.Point(133, 179);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(139, 21);
             this.cmbTipoUsuario.TabIndex = 9;
-            this.cmbTipoUsuario.Text = "Elija un tipo de Usuario";
             this.cmbTipoUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbTipoUsuario_SelectedIndexChanged);
             // 
             // AgregarUsuario

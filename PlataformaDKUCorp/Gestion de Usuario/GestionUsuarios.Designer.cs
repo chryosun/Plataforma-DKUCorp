@@ -85,7 +85,7 @@
             this.Btn_Borrar.Name = "Btn_Borrar";
             this.Btn_Borrar.Size = new System.Drawing.Size(142, 40);
             this.Btn_Borrar.TabIndex = 4;
-            this.Btn_Borrar.Text = "Borrar Usaurio";
+            this.Btn_Borrar.Text = "Borrar Usuario";
             this.Btn_Borrar.UseVisualStyleBackColor = true;
             this.Btn_Borrar.Click += new System.EventHandler(this.Btn_Borrar_Click);
             // 
