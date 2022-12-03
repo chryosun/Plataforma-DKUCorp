@@ -44,12 +44,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(86, 71);
+            this.groupBox1.Location = new System.Drawing.Point(60, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 93);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cuestionarios Disponibles";
+            this.groupBox1.Text = "Simulaciones Disponibles";
             // 
             // NombreClase
             // 
@@ -71,6 +71,7 @@
             this.Controls.Add(this.NombreClase);
             this.Name = "asigAlumno";
             this.Text = "asigAlumno";
+            this.Load += new System.EventHandler(this.asigAlumno_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

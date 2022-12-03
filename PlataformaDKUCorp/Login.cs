@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlataformaDKUCorp.Interfaz_Alumno;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,7 +56,8 @@ namespace PlataformaDKUCorp
                     }
                     else if (dt.Rows[0][1].ToString() == "E")
                     {
-
+                        var frmEst = new MenuAlumno(this);
+                        frmEst.Show();
                     }
                     this.Hide();
                     txtUsuario.Clear();

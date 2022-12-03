@@ -20,11 +20,12 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
         public Form RefToClase { get; set; }
         public bool DoExist { get; set; }
 
-        public DatosSim(Form RefToClase,bool doExist = false, string idSim = "", string SimNom = "",string numFases = "", string SimNota = "", string SimDesc = "")
+        public DatosSim(Form RefToClase,double presupuesto=0, double precioProd=0, 
+            double maqValor=0,bool doExist = false, string idSim = "", string SimNom = "",string numFases = "", string SimNota = "", string SimDesc = "")
         {
             InitializeComponent();
             this.DoExist = doExist;
-            this.lblSimID.Text = idSim;
+            this.lblSimID.Text = idSim=="" ? "__": idSim;
             BtnAgregar.Enabled = !doExist;
             if (doExist)
             {
@@ -35,6 +36,9 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             this.TxtPreguntaSim.Text = numFases;
             this.TxtPuntuacionSim.Text = SimNota;
             this.TxtDescSim.Text = SimDesc;
+            this.txtPresupuesto.Text= presupuesto.ToString();
+            this.txtPrecioProd.Text = precioProd.ToString();
+            this.txtMaqValor.Text = maqValor.ToString();
             this.RefToClase = RefToClase;
         }
 
@@ -92,6 +96,18 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             {
                 MessageBox.Show("No se ingreso datos en el cuadro de \'Descripción de la Simulación:\'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if(txtPresupuesto.Text == String.Empty)
+            {
+                MessageBox.Show("No se ingreso datos en el cuadro de \'Presupuesto de Empresa en Lps.:\'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(txtPrecioProd.Text == String.Empty)
+            {
+                MessageBox.Show("No se ingreso datos en el cuadro de \'Precio de Productos en Lps.:\'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(txtMaqValor.Text == String.Empty)
+            {
+                MessageBox.Show("No se ingreso datos en el cuadro de \'Valor de Maquinaria en Lps.:\'", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 try
@@ -99,13 +115,28 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
                     Conexion_a_BD.ConexionBD.ObtenerConexion();
                     SqlDataAdapter sda = new SqlDataAdapter();
                     //Hacer update a un registro de la Simulacion
+                    
+                    if(!this.DoExist)
+                    {
+                        var cmd = new SqlCommand("INSERT INTO Simulacion VALUES ('" + TxtNombreSim.Text.ToString() +
+                        "', '" + TxtPreguntaSim.Text.ToString() + "', '" + TxtDescSim.Text.ToString() +
+                        "', " + TxtPuntuacionSim.Text.ToString() + ", " + txtPresupuesto.Text.ToString() +
+                        ", " + txtPrecioProd.Text.ToString() + ", " + txtMaqValor.Text.ToString() + ",null,null, 'FIN101', '" + Sesion.NombreUsuario.ToString() + "' )",ConexionBD.conexion);
+                        cmd.ExecuteNonQuery();
 
-                   var cmd = new SqlCommand("UPDATE Simulacion SET SimNom = '" + TxtNombreSim.Text.ToString() + 
-                        "' ,NumFases = '" + TxtPreguntaSim.Text.ToString() + "' ,SimDesc = '" + TxtDescSim.Text.ToString() + 
-                        "' ,SimNota = " + TxtPuntuacionSim.Text.ToString() + " WHERE SimID = '" + lblSimID.Text.ToString() + "'",ConexionBD.conexion);
-                    cmd.ExecuteNonQuery();
+                        MessageBox.Show("Se agrego los detalles de la nueva simulación exitosamente", "Enhorabuena", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        BtnAgregar.Enabled = true;
+                    }
+                    else
+                    {
+                        var cmd = new SqlCommand("UPDATE Simulacion SET SimNom = '" + TxtNombreSim.Text.ToString() +
+                        "' ,NumRondas = '" + TxtPreguntaSim.Text.ToString() + "' ,SimDesc = '" + TxtDescSim.Text.ToString() +
+                        "' ,SimNota = " + TxtPuntuacionSim.Text.ToString() + ", PresupuestoInit = " + txtPresupuesto.Text.ToString() +
+                        ", PrecioProdInit = " + txtPrecioProd.Text.ToString() + ", MaqValor =  " + txtMaqValor.Text.ToString() + ",ClaseID = 'FIN101', Autor = '" + Sesion.NombreUsuario.ToString() + "' WHERE SimID = '" + lblSimID.Text.ToString() + "'", ConexionBD.conexion);
+                        cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Se actualizó los detalles de la Simulación, exitosamente", "Enhorabuena", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se actualizó los detalles de la Simulación, exitosamente", "Enhorabuena", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
 
                 }
@@ -122,7 +153,19 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             
         }
 
-        private void BtnAgregar_Click(object sender, EventArgs e)
+        private void BtnIniciarSim_Click(object sender, EventArgs e)
+        {
+            using(Model.DkuCorpEntities db = new Model.DkuCorpEntities())
+            {
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

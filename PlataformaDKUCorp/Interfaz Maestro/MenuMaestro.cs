@@ -101,7 +101,8 @@ namespace PlataformaDKUCorp
         {
             var asig = new Asignatura(this);
             this.Hide();
-            asig.Show();
+            asig.ShowDialog();
+            this.Show();
 
         }
 

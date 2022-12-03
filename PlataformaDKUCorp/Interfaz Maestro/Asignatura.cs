@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlataformaDKUCorp.Interfaz_Maestro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +35,7 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         private void BtnNuevoCuest_Click(object sender, EventArgs e)
         {
-            Creacion_de_Cuestionario.DatosSim formCuest = new DatosSim(this,true);
+            Creacion_de_Cuestionario.DatosSim formCuest = new DatosSim(this,0,0,0,false);
             formCuest.ShowDialog();
         }
 
@@ -108,13 +109,14 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
             {
                 Conexion_a_BD.ConexionBD.ObtenerConexion();
                 SqlDataAdapter sda = new SqlDataAdapter();
-                sda.SelectCommand = new SqlCommand("SELECT SimNom, NumFases, SimNota, SimDesc, SimID FROM Simulacion " +
+                sda.SelectCommand = new SqlCommand("SELECT SimNom, NumRondas, SimNota, SimDesc, SimID,PresupuestoInit,PrecioProdInit,MaqValor FROM Simulacion " +
                     "WHERE SimNom = '" + ((Button)sender).Text + "'", Conexion_a_BD.ConexionBD.conexion);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
                 //Guardar datos del constructor en su respectivo Textbox
-                DatosSim dtSim = new DatosSim(this, true,dt.Rows[0][4].ToString(), dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
+                DatosSim dtSim = new DatosSim(this, Convert.ToDouble(dt.Rows[0][5]), Convert.ToDouble(dt.Rows[0][6]), Convert.ToDouble(dt.Rows[0][7]),true, dt.Rows[0][4].ToString(), dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(),
+                    dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
                 this.Hide();
                 dtSim.Show();
                 
@@ -132,6 +134,11 @@ namespace PlataformaDKUCorp.Creacion_de_Cuestionario
 
         }
 
+        private void btnArchivosAdjuntos_Click(object sender, EventArgs e)
+        {
+            var archadj = new ArchivosAdj();
+            archadj.ShowDialog();
+        }
     } 
 }
 

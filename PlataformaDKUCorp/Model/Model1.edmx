@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DkuCorpModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Archivos">
+          <Key>
+            <PropertyRef Name="archivoID" />
+          </Key>
+          <Property Name="archivoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="archivoNom" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nomReal" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="bajoMaestro" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="contenido" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Carrera">
+          <Key>
+            <PropertyRef Name="CarreraID" />
+          </Key>
+          <Property Name="CarreraID" Type="int" Nullable="false" />
+          <Property Name="CarreraDesc" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clase">
+          <Key>
+            <PropertyRef Name="ClaseID" />
+          </Key>
+          <Property Name="ClaseID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ClaseNom" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="EstudianteID" />
+          </Key>
+          <Property Name="EstudianteID" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="EstudianteNombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EstudianteApellido" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UsuarioNom" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maestro">
+          <Key>
+            <PropertyRef Name="MaestroID" />
+          </Key>
+          <Property Name="MaestroID" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="MaestroNombre" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaestroApellido" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TituloActual" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UsuarioNom" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Matricula">
+          <Key>
+            <PropertyRef Name="MatriculaId" />
+          </Key>
+          <Property Name="MatriculaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClaseID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EstudianteID" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="fechaInicio" Type="date" />
+          <Property Name="fechaFinal" Type="date" />
+        </EntityType>
+        <EntityType Name="Simulacion">
+          <Key>
+            <PropertyRef Name="SimID" />
+          </Key>
+          <Property Name="SimID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="SimNom" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NumRondas" Type="int" Nullable="false" />
+          <Property Name="SimDesc" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SimNota" Type="int" Nullable="false" />
+          <Property Name="PresupuestoInit" Type="money" />
+          <Property Name="PrecioProdInit" Type="money" />
+          <Property Name="MaqValor" Type="money" />
+          <Property Name="ClaseID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Autor" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioNom" />
+          </Key>
+          <Property Name="UsuarioNom" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="UsuarioContraseña" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TipoUsuario" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK__Archivos__bajoMa__37A5467C">
+          <End Role="Maestro" Type="Self.Maestro" Multiplicity="1" />
+          <End Role="Archivos" Type="Self.Archivos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maestro">
+              <PropertyRef Name="MaestroID" />
+            </Principal>
+            <Dependent Role="Archivos">
+              <PropertyRef Name="bajoMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estudiant__Usuar__2B3F6F97">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioNom" />
+            </Principal>
+            <Dependent Role="Estudiante">
+              <PropertyRef Name="UsuarioNom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maestro__Usuario__286302EC">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Maestro" Type="Self.Maestro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioNom" />
+            </Principal>
+            <Dependent Role="Maestro">
+              <PropertyRef Name="UsuarioNom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matricula__Clase__31EC6D26">
+          <End Role="Clase" Type="Self.Clase" Multiplicity="1" />
+          <End Role="Matricula" Type="Self.Matricula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clase">
+              <PropertyRef Name="ClaseID" />
+            </Principal>
+            <Dependent Role="Matricula">
+              <PropertyRef Name="ClaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matricula__Estud__32E0915F">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+          <End Role="Matricula" Type="Self.Matricula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiante">
+              <PropertyRef Name="EstudianteID" />
+            </Principal>
+            <Dependent Role="Matricula">
+              <PropertyRef Name="EstudianteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Simulacio__Autor__2E1BDC42">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Simulacion" Type="Self.Simulacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioNom" />
+            </Principal>
+            <Dependent Role="Simulacion">
+              <PropertyRef Name="Autor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Simulacio__Clase__2F10007B">
+          <End Role="Clase" Type="Self.Clase" Multiplicity="1" />
+          <End Role="Simulacion" Type="Self.Simulacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clase">
+              <PropertyRef Name="ClaseID" />
+            </Principal>
+            <Dependent Role="Simulacion">
+              <PropertyRef Name="ClaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DkuCorpModelStoreContainer">
+          <EntitySet Name="Archivos" EntityType="Self.Archivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Carrera" EntityType="Self.Carrera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clase" EntityType="Self.Clase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudiante" EntityType="Self.Estudiante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maestro" EntityType="Self.Maestro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matricula" EntityType="Self.Matricula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Simulacion" EntityType="Self.Simulacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Archivos__bajoMa__37A5467C" Association="Self.FK__Archivos__bajoMa__37A5467C">
+            <End Role="Maestro" EntitySet="Maestro" />
+            <End Role="Archivos" EntitySet="Archivos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estudiant__Usuar__2B3F6F97" Association="Self.FK__Estudiant__Usuar__2B3F6F97">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Estudiante" EntitySet="Estudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maestro__Usuario__286302EC" Association="Self.FK__Maestro__Usuario__286302EC">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Maestro" EntitySet="Maestro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matricula__Clase__31EC6D26" Association="Self.FK__Matricula__Clase__31EC6D26">
+            <End Role="Clase" EntitySet="Clase" />
+            <End Role="Matricula" EntitySet="Matricula" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matricula__Estud__32E0915F" Association="Self.FK__Matricula__Estud__32E0915F">
+            <End Role="Estudiante" EntitySet="Estudiante" />
+            <End Role="Matricula" EntitySet="Matricula" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Simulacio__Autor__2E1BDC42" Association="Self.FK__Simulacio__Autor__2E1BDC42">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Simulacion" EntitySet="Simulacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Simulacio__Clase__2F10007B" Association="Self.FK__Simulacio__Clase__2F10007B">
+            <End Role="Clase" EntitySet="Clase" />
+            <End Role="Simulacion" EntitySet="Simulacion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DkuCorpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="archivoID" />
+          </Key>
+          <Property Name="archivoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="archivoNom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomReal" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bajoMaestro" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contenido" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Maestro" Relationship="Self.FK__Archivos__bajoMa__37A5467C" FromRole="Archivos" ToRole="Maestro" />
+        </EntityType>
+        <EntityType Name="Carrera">
+          <Key>
+            <PropertyRef Name="CarreraID" />
+          </Key>
+          <Property Name="CarreraID" Type="Int32" Nullable="false" />
+          <Property Name="CarreraDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clase">
+          <Key>
+            <PropertyRef Name="ClaseID" />
+          </Key>
+          <Property Name="ClaseID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClaseNom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Matriculas" Relationship="Self.FK__Matricula__Clase__31EC6D26" FromRole="Clase" ToRole="Matricula" />
+          <NavigationProperty Name="Simulacions" Relationship="Self.FK__Simulacio__Clase__2F10007B" FromRole="Clase" ToRole="Simulacion" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="EstudianteID" />
+          </Key>
+          <Property Name="EstudianteID" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstudianteNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstudianteApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UsuarioNom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Estudiant__Usuar__2B3F6F97" FromRole="Estudiante" ToRole="Usuario" />
+          <NavigationProperty Name="Matriculas" Relationship="Self.FK__Matricula__Estud__32E0915F" FromRole="Estudiante" ToRole="Matricula" />
+        </EntityType>
+        <EntityType Name="Maestro">
+          <Key>
+            <PropertyRef Name="MaestroID" />
+          </Key>
+          <Property Name="MaestroID" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaestroNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaestroApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TituloActual" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UsuarioNom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Archivos" Relationship="Self.FK__Archivos__bajoMa__37A5467C" FromRole="Maestro" ToRole="Archivos" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Maestro__Usuario__286302EC" FromRole="Maestro" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Matricula">
+          <Key>
+            <PropertyRef Name="MatriculaId" />
+          </Key>
+          <Property Name="MatriculaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClaseID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstudianteID" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="fechaFinal" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Clase" Relationship="Self.FK__Matricula__Clase__31EC6D26" FromRole="Matricula" ToRole="Clase" />
+          <NavigationProperty Name="Estudiante" Relationship="Self.FK__Matricula__Estud__32E0915F" FromRole="Matricula" ToRole="Estudiante" />
+        </EntityType>
+        <EntityType Name="Simulacion">
+          <Key>
+            <PropertyRef Name="SimID" />
+          </Key>
+          <Property Name="SimID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SimNom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumRondas" Type="Int32" Nullable="false" />
+          <Property Name="SimDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SimNota" Type="Int32" Nullable="false" />
+          <Property Name="PresupuestoInit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PrecioProdInit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MaqValor" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ClaseID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Autor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Clase" Relationship="Self.FK__Simulacio__Clase__2F10007B" FromRole="Simulacion" ToRole="Clase" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Simulacio__Autor__2E1BDC42" FromRole="Simulacion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioNom" />
+          </Key>
+          <Property Name="UsuarioNom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UsuarioContraseña" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoUsuario" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Estudiantes" Relationship="Self.FK__Estudiant__Usuar__2B3F6F97" FromRole="Usuario" ToRole="Estudiante" />
+          <NavigationProperty Name="Maestroes" Relationship="Self.FK__Maestro__Usuario__286302EC" FromRole="Usuario" ToRole="Maestro" />
+          <NavigationProperty Name="Simulacions" Relationship="Self.FK__Simulacio__Autor__2E1BDC42" FromRole="Usuario" ToRole="Simulacion" />
+        </EntityType>
+        <Association Name="FK__Archivos__bajoMa__37A5467C">
+          <End Role="Maestro" Type="Self.Maestro" Multiplicity="1" />
+          <End Role="Archivos" Type="Self.Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maestro">
+              <PropertyRef Name="MaestroID" />
+            </Principal>
+            <Dependent Role="Archivos">
+              <PropertyRef Name="bajoMaestro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matricula__Clase__31EC6D26">
+          <End Role="Clase" Type="Self.Clase" Multiplicity="1" />
+          <End Role="Matricula" Type="Self.Matricula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clase">
+              <PropertyRef Name="ClaseID" />
+            </Principal>
+            <Dependent Role="Matricula">
+              <PropertyRef Name="ClaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Simulacio__Clase__2F10007B">
+          <End Role="Clase" Type="Self.Clase" Multiplicity="1" />
+          <End Role="Simulacion" Type="Self.Simulacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clase">
+              <PropertyRef Name="ClaseID" />
+            </Principal>
+            <Dependent Role="Simulacion">
+              <PropertyRef Name="ClaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estudiant__Usuar__2B3F6F97">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioNom" />
+            </Principal>
+            <Dependent Role="Estudiante">
+              <PropertyRef Name="UsuarioNom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matricula__Estud__32E0915F">
+          <End Role="Estudiante" Type="Self.Estudiante" Multiplicity="1" />
+          <End Role="Matricula" Type="Self.Matricula" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estudiante">
+              <PropertyRef Name="EstudianteID" />
+            </Principal>
+            <Dependent Role="Matricula">
+              <PropertyRef Name="EstudianteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Maestro__Usuario__286302EC">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Maestro" Type="Self.Maestro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioNom" />
+            </Principal>
+            <Dependent Role="Maestro">
+              <PropertyRef Name="UsuarioNom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Simulacio__Autor__2E1BDC42">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Simulacion" Type="Self.Simulacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioNom" />
+            </Principal>
+            <Dependent Role="Simulacion">
+              <PropertyRef Name="Autor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DkuCorpEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archivos" EntityType="Self.Archivo" />
+          <EntitySet Name="Carreras" EntityType="Self.Carrera" />
+          <EntitySet Name="Clases" EntityType="Self.Clase" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiante" />
+          <EntitySet Name="Maestroes" EntityType="Self.Maestro" />
+          <EntitySet Name="Matriculas" EntityType="Self.Matricula" />
+          <EntitySet Name="Simulacions" EntityType="Self.Simulacion" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Archivos__bajoMa__37A5467C" Association="Self.FK__Archivos__bajoMa__37A5467C">
+            <End Role="Maestro" EntitySet="Maestroes" />
+            <End Role="Archivos" EntitySet="Archivos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matricula__Clase__31EC6D26" Association="Self.FK__Matricula__Clase__31EC6D26">
+            <End Role="Clase" EntitySet="Clases" />
+            <End Role="Matricula" EntitySet="Matriculas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Simulacio__Clase__2F10007B" Association="Self.FK__Simulacio__Clase__2F10007B">
+            <End Role="Clase" EntitySet="Clases" />
+            <End Role="Simulacion" EntitySet="Simulacions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estudiant__Usuar__2B3F6F97" Association="Self.FK__Estudiant__Usuar__2B3F6F97">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Estudiante" EntitySet="Estudiantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matricula__Estud__32E0915F" Association="Self.FK__Matricula__Estud__32E0915F">
+            <End Role="Estudiante" EntitySet="Estudiantes" />
+            <End Role="Matricula" EntitySet="Matriculas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Maestro__Usuario__286302EC" Association="Self.FK__Maestro__Usuario__286302EC">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Maestro" EntitySet="Maestroes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Simulacio__Autor__2E1BDC42" Association="Self.FK__Simulacio__Autor__2E1BDC42">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Simulacion" EntitySet="Simulacions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DkuCorpModelStoreContainer" CdmEntityContainer="DkuCorpEntities">
+          <EntitySetMapping Name="Archivos">
+            <EntityTypeMapping TypeName="DkuCorpModel.Archivo">
+              <MappingFragment StoreEntitySet="Archivos">
+                <ScalarProperty Name="archivoID" ColumnName="archivoID" />
+                <ScalarProperty Name="archivoNom" ColumnName="archivoNom" />
+                <ScalarProperty Name="nomReal" ColumnName="nomReal" />
+                <ScalarProperty Name="bajoMaestro" ColumnName="bajoMaestro" />
+                <ScalarProperty Name="contenido" ColumnName="contenido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carreras">
+            <EntityTypeMapping TypeName="DkuCorpModel.Carrera">
+              <MappingFragment StoreEntitySet="Carrera">
+                <ScalarProperty Name="CarreraID" ColumnName="CarreraID" />
+                <ScalarProperty Name="CarreraDesc" ColumnName="CarreraDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clases">
+            <EntityTypeMapping TypeName="DkuCorpModel.Clase">
+              <MappingFragment StoreEntitySet="Clase">
+                <ScalarProperty Name="ClaseID" ColumnName="ClaseID" />
+                <ScalarProperty Name="ClaseNom" ColumnName="ClaseNom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudiantes">
+            <EntityTypeMapping TypeName="DkuCorpModel.Estudiante">
+              <MappingFragment StoreEntitySet="Estudiante">
+                <ScalarProperty Name="EstudianteID" ColumnName="EstudianteID" />
+                <ScalarProperty Name="EstudianteNombre" ColumnName="EstudianteNombre" />
+                <ScalarProperty Name="EstudianteApellido" ColumnName="EstudianteApellido" />
+                <ScalarProperty Name="UsuarioNom" ColumnName="UsuarioNom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maestroes">
+            <EntityTypeMapping TypeName="DkuCorpModel.Maestro">
+              <MappingFragment StoreEntitySet="Maestro">
+                <ScalarProperty Name="MaestroID" ColumnName="MaestroID" />
+                <ScalarProperty Name="MaestroNombre" ColumnName="MaestroNombre" />
+                <ScalarProperty Name="MaestroApellido" ColumnName="MaestroApellido" />
+                <ScalarProperty Name="TituloActual" ColumnName="TituloActual" />
+                <ScalarProperty Name="UsuarioNom" ColumnName="UsuarioNom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matriculas">
+            <EntityTypeMapping TypeName="DkuCorpModel.Matricula">
+              <MappingFragment StoreEntitySet="Matricula">
+                <ScalarProperty Name="MatriculaId" ColumnName="MatriculaId" />
+                <ScalarProperty Name="ClaseID" ColumnName="ClaseID" />
+                <ScalarProperty Name="EstudianteID" ColumnName="EstudianteID" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaFinal" ColumnName="fechaFinal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Simulacions">
+            <EntityTypeMapping TypeName="DkuCorpModel.Simulacion">
+              <MappingFragment StoreEntitySet="Simulacion">
+                <ScalarProperty Name="SimID" ColumnName="SimID" />
+                <ScalarProperty Name="SimNom" ColumnName="SimNom" />
+                <ScalarProperty Name="NumRondas" ColumnName="NumRondas" />
+                <ScalarProperty Name="SimDesc" ColumnName="SimDesc" />
+                <ScalarProperty Name="SimNota" ColumnName="SimNota" />
+                <ScalarProperty Name="PresupuestoInit" ColumnName="PresupuestoInit" />
+                <ScalarProperty Name="PrecioProdInit" ColumnName="PrecioProdInit" />
+                <ScalarProperty Name="MaqValor" ColumnName="MaqValor" />
+                <ScalarProperty Name="ClaseID" ColumnName="ClaseID" />
+                <ScalarProperty Name="Autor" ColumnName="Autor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="DkuCorpModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="UsuarioNom" ColumnName="UsuarioNom" />
+                <ScalarProperty Name="UsuarioContraseña" ColumnName="UsuarioContraseña" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

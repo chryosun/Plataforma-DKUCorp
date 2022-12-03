@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5cf8e7bf1cdd487d87aa9f6d441bb7bb" Name="Diagram1">
+        <EntityTypeShape EntityType="DkuCorpModel.Archivo" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Carrera" Width="1.5" PointX="6.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Clase" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Estudiante" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Maestro" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Matricula" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Simulacion" Width="1.5" PointX="8" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DkuCorpModel.Usuario" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="DkuCorpModel.FK__Archivos__bajoMa__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="DkuCorpModel.FK__Matricula__Clase__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="DkuCorpModel.FK__Simulacio__Clase__2F10007B" ManuallyRouted="true" >
+          <ConnectorPoint PointX="4.5" PointY="2.4262118098958325" />
+          <ConnectorPoint PointX="5.635416666666667" PointY="2.4262118098958321" />
+          <ConnectorPoint PointX="5.802083333333333" PointY="2.4262118098958325" />
+          <ConnectorPoint PointX="8.75" PointY="2.4262118098958325" />
+          <ConnectorPoint PointX="8.75" PointY="4.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="DkuCorpModel.FK__Estudiant__Usuar__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="DkuCorpModel.FK__Matricula__Estud__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="DkuCorpModel.FK__Maestro__Usuario__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="DkuCorpModel.FK__Simulacio__Autor__2E1BDC42" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -32,6 +32,7 @@
             this.BtnNuevoCuest = new System.Windows.Forms.Button();
             this.NombreClase = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnArchivosAdjuntos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,7 +67,7 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(560, 382);
+            this.btnRegresar.Location = new System.Drawing.Point(594, 382);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(75, 45);
             this.btnRegresar.TabIndex = 6;
@@ -74,11 +75,22 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
+            // btnArchivosAdjuntos
+            // 
+            this.btnArchivosAdjuntos.Location = new System.Drawing.Point(524, 65);
+            this.btnArchivosAdjuntos.Name = "btnArchivosAdjuntos";
+            this.btnArchivosAdjuntos.Size = new System.Drawing.Size(145, 63);
+            this.btnArchivosAdjuntos.TabIndex = 7;
+            this.btnArchivosAdjuntos.Text = "Archivos Adjuntos";
+            this.btnArchivosAdjuntos.UseVisualStyleBackColor = true;
+            this.btnArchivosAdjuntos.Click += new System.EventHandler(this.btnArchivosAdjuntos_Click);
+            // 
             // Asignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 439);
+            this.ClientSize = new System.Drawing.Size(701, 439);
+            this.Controls.Add(this.btnArchivosAdjuntos);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnNuevoCuest);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Button BtnNuevoCuest;
         private System.Windows.Forms.Label NombreClase;
         private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnArchivosAdjuntos;
     }
 }
